@@ -1,0 +1,27 @@
+<h5>    <%=pageTitle  %> </h5>
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Item</th>
+            <th>Price</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% let total = 0; %>
+        <% for (let index = 0; index < products.length; index++) { %>
+            <tr>
+                <td><%= products[index].name %></td>
+                <td><%= products[index].Price %></td>
+                <td><a href="/frames/remove-from-cart/<%= products[index]._id %>" class="btn btn-danger">Remove</a></td>
+            </tr>
+            <% total += products[index].Price; %>
+        <% } %>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th>Total</th>
+            <th><%= total %></th>
+        </tr>
+    </tfoot>
+</table>

@@ -1,0 +1,54 @@
+<h3>Update Products</h3>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="row mt-5">
+      <div class="col-md-6 offset-md-3">
+        <div class="card">
+          <div class="card-body">
+            <form id="updateproducts" method="POST" action="/updateproducts"> 
+              <input type="hidden" name="id" value="<%= id %>">
+              <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" class="form-control" id="name" name="name" required>
+              </div>
+              <div class="form-group">
+                <label for="details">Details</label>
+                <textarea class="form-control" id="details" name="details" required></textarea>
+              </div>
+              <div class="form-group">
+                <label for="Price">Price</label>
+                <input type="number" class="form-control" id="Price" name="Price" required>
+              </div>
+              <div class="form-group">
+                <label for="rating">Rating</label>
+                <input type="number" class="form-control" id="rating" name="rating" required>
+              </div>
+              <div class="form-group">
+                <label for="isPublished">Is Published</label>
+                <input type="boolean" class="form-control" id="isPublished" name="isPublished">
+              </div>  
+              <div class="form-group">
+                <label for="image">ImageURL/Path</label>
+                <input type="text" class="form-control" id="image" name="image">
+              </div> 
+              <button type="submit" class="btn btn-primary">Update</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

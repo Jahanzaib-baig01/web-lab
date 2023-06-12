@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    body {
+      background-color: #f2f2f2;
+      font-family: Arial, sans-serif;
+    }
+
+    h1 {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    b {
+      font-weight: bold;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      animation: fadeIn 1s;
+    }
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+    .btn-primary {
+      background-color: #007bff;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      width: 100%;
+      animation: scaleIn 0.5s;
+    }
+
+    @keyframes scaleIn {
+      0% {
+        transform: scale(0.8);
+        opacity: 0;
+      }
+      100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    .row {
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <img src="images/icons8-user-30.png" alt="icon">
+    <h1>Admin Profile</h1>
+    <div class="row">
+      <div class="col-md-4">
+        <b>UserName:</b> <%= user.username %>
+      </div>
+      <div class="col-md-4">
+        <b>Email:</b> <%= user.email %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-4">
+        <a href="/framesinventory"><button class="btn btn-primary">Go to Frames Inventory</button></a>
+      </div>
+      <div class="col-md-4">
+        <a href="/masksinventory"><button class="btn btn-primary">Go to Mask Inventory</button></a>
+      </div>
+      <div class="col-md-4">
+        <a href="/productsinventory"><button class="btn btn-primary">Go to Products Inventory</button></a>
+      </div>
+    </div>
+  </div>
+  <!-- Bootstrap JS (optional) -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

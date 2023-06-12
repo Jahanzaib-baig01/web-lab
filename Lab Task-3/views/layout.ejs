@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Archaic Ashiyas</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/css/design.css">
+  </head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div   class="container-fluid">
+          <a class="navbar-brand" href="https://instagram.com/archaicashiyas?igshid=YmMyMTA2M2Y=">Archaic Ashiyas</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/">Home</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Menu
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="/masks">Masks</a></li>
+                  <li><a class="dropdown-item" href="/frames">Frames</a></li>
+                  <li><a class="dropdown-item" href="/moreproducts">Products</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="https://instagram.com/archaicashiyas?igshid=YmMyMTA2M2Y=">Contact</a>
+              </li>
+              <% if (user) { %>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Cart
+                  </a>
+                <ul class="dropdown-menu">
+                  <li class="nav-item">
+                    <a class="nav-link" href="/frames/cart">Frames</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/masks/cart">Masks</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/moreproducts/cart">Products</a>
+                  </li>
+                </ul>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/admin-profile">Admin</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/logout">Logout <%= user.username %> </a>
+                </li>
+              <% } else { %>
+                <li class="nav-item">
+                  <a class="nav-link" href="/login">Login</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/register">Signup</a>
+                </li>
+                 
+              <% } %>
+              
+            </ul>
+            <form class="d-flex" role="search">
+              <input  class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit">Search</button>
+              <a href="/profile"><img id="b3" src="/images/icons8-user-30.png" alt="icon"></a>
+            </form>
+          </div>
+        </div>
+     </nav>
+     <% if (flash) { %>
+      <div class="alert alert-<%-flash.type%>">
+        <%= flash.message %>
+      </div>
+    <% } %>
+   
+
+      <div>
+        <%-body  %>
+      </div>
+
+      <!-- <h6>Footer</h6> -->
+      <div>
+
+          <footer>
+
+            <div class="f1">
+              <br>
+              <h4>Need help</h4>
+            <p>Help Center <br> Contact Us <br>Return Policy <br>Shipping Details
+              <br></p>
+            </div>
+
+            <div class="f2">
+              <br>
+              <h4>For Buyers</h4>
+            <p>Buyer FAQ <br> Buy Now <br>
+              <br></p>
+            </div>
+
+            <div class="f3">
+              <br>
+              <h4>For Sellers</h4>
+            <p>Consign with US<br>
+              Seller FAQ <br>
+              <br></p>
+            </div>
+
+            <div class="f4">
+              <br>
+              <h4>Shop</h4>
+            <p>Antique Products<br>Antique Sculptures<br>
+              <br></p>
+            </div>
+
+            <div class="f5">
+              <p><span>CopyRights at Archaic Ashiyas: &copy;</span></p>
+            </div>
+
+          </footer>
+        </div>
+      

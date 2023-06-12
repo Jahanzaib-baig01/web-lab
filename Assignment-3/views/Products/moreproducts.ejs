@@ -1,0 +1,15 @@
+
+
+<div class="card-row" style="display: flex; flex-wrap: wrap; justify-content: space-between; background-color: cadetblue;">
+    <% for (let index = 0; index < moreproducts.length; index++) { %>
+      <div class="card" style="width: 22rem; margin-bottom: 20px; background-color: #f2f2f2; padding: 10px;box-sizing: border-box;">
+        <img src="<%= moreproducts[index].image %>" class="card-img-top" alt="cardimage">
+        <div class="card-body">
+          <h2 class="product-title" style="margin: 0; font-size: 18px;display: flex; justify-content: space-between;"><%= moreproducts[index].name %><span class="product-price" style="color: chocolate;">PKR <%= moreproducts[index].Price %></span></h2>
+          <p class="product-detail" style="color:darkcyan;"><%= moreproducts[index].details %></p>
+          <a href="/moreproducts/add-to-cart/<%= moreproducts[index]._id %>" class="btn btn-secondary">Add To Cart</a>
+        </div>
+      </div>
+    <% } %>
+</div>
+  

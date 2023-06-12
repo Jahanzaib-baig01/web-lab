@@ -1,0 +1,44 @@
+<h5><%= pageTitle %></h5>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Product</th>
+      <th>Price</th>
+      <th>Details</th>
+      <th>Update</th>
+      <th>Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% for (let index = 0; index < moreproducts.length; index++) { %>
+      <tr>
+        <td><%= moreproducts[index].name %></td>
+        <td>PKR <%= moreproducts[index].Price %></td>
+        <td><%= moreproducts[index].details %></td>
+        <td>
+          <div class="col-md-4">
+            <a href="/getproductid?id=<%= moreproducts[index].id %>"><button class="btn btn-success">Update</button></a>
+          </div>
+        </td>
+        <td>
+          <div class="col-md-4">
+            <form id="deleteForm" method="POST" action="/productsinventory">
+              <input type="hidden" name="_method" value="DELETE">
+              <input type="hidden" name="id" value="<%= moreproducts[index].id %>">
+              <button class="btn btn-danger" type="submit">Delete</button>
+            </form>
+          </div> 
+        </td>
+      </tr>
+    <% } %>
+  </tbody>
+</table>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">
+      <a href="/addproducts" class="btn btn-primary">Add Product</a>
+    </div>
+  </div>
+</div>

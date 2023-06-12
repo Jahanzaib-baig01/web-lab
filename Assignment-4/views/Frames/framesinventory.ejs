@@ -1,0 +1,44 @@
+<h5><%= pageTitle %></h5>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Product</th>
+      <th>Price</th>
+      <th>Details</th>
+      <th>Update</th>
+      <th>Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% for (let index = 0; index < frames.length; index++) { %>
+      <tr>
+        <td><%= frames[index].name %></td>
+        <td>PKR <%= frames[index].Price %></td>
+        <td><%= frames[index].details %></td>
+        <td>
+          <div class="col-md-4">
+              <a href="/getframeid?id=<%= frames[index].id %>"><button class="btn btn-success">Update</button></a>
+          </div>
+        </td>
+        <td>
+          <div class="col-md-4">
+            <form id="deleteForm" method="POST" action="/framesinventory">
+              <input type="hidden" name="_method" value="DELETE">
+              <input type="hidden" name="id" value="<%= frames[index].id %>">
+              <button class="btn btn-danger" type="submit">Delete</button>
+            </form>
+          </div> 
+        </td>
+      </tr>
+    <% } %>
+  </tbody>
+</table>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">
+      <a href="/addframes" class="btn btn-primary">Add Frames</a>
+    </div>
+  </div>
+</div>
